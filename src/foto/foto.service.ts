@@ -20,11 +20,11 @@ export class FotoService {
         return foto;
     }
 
-    async readFoto(id:String){
+    async readFoto(id:String):Promise<Foto>{
         return await this.fotoRepository.findOne({where:{id}})
     }
 
-    async updateFot(id:String, datos){
+    async updateFot(id:String, datos):Promise<Foto>{
         await this.fotoRepository.update({id}, datos);
         return await this.fotoRepository.findOne({id});
     }
